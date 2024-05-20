@@ -74,7 +74,7 @@ a{
         border-radius: 5px;
     }
     /* estilo para  los contenidos de formulario*/
-    form div {border: 2px solid red;
+    form div {
         margin-bottom: 1em;
     }
     form label {
@@ -103,6 +103,7 @@ a{
     }
 
     /* estilo para login*/
+    h1 h2{ text-align: center;}
     .login-container {
         padding: 20px;
         border-radius: 5px;
