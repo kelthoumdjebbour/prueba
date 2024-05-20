@@ -163,3 +163,17 @@ a{
    .vedio{ position: fixed;
           width: 100%;           
              }
+
+             /*footer*/
+    footer {
+        background:linear-gradient(transparent,#000000ec); /* Color de fondo del footer */
+        color:rgb(224, 222, 222); 
+        padding: 5px;  
+        position: fixed;  
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+      }
