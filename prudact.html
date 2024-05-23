@@ -33,7 +33,7 @@
              
     <img id="imagen" src="imagen/napolitana1.jpg" alt="napolitana1" srcset="">
     
-
+ 
         </div>
         <h3>Napolitana</h3>
         <footer>
@@ -41,6 +41,16 @@
             <i class="fa-brands fa-linkedin" style="color: #e3740d;"></i><a href="https://www.linkedin.com/in/djebbour-kelthoum-438071258/">LinkedIn</a></li>
         </footer>
         <script src="script.js"></script>
-       
+       <!--  script para cambiar imagen -->
+        <script>
+            const napolitana=document.getElementById("imagen");
+            const btn=document.getElementById("btn");
+
+            napolitana.addEventListener("mouseover",function(){
+                napolitana.src="imagen/napolitana2.jpg";
+            });
+            napolitana.addEventListener("mouseout",()=> napolitana.src="imagen/napolitana1.jpg");
+        </script>
     </body>
     </html>
+   

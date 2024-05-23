@@ -54,11 +54,3 @@ const lista = document.getElementById("selector");
        }
 
     })
-// script para cambiar imagen de prudact
-    const napolitana=document.getElementById("imagen");
-    const btn=document.getElementById("btn");
-
-    napolitana.addEventListener("mouseover",function(){
-        napolitana.src="imagen/napolitana2.jpg";
-    });
-    napolitana.addEventListener("mouseout",()=> napolitana.src="imagen/napolitana1.jpg");
