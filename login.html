@@ -30,7 +30,7 @@
                     <label for="password">Contraseña:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Ingresar</button>
+                <button id="Ingresar" type="submit">Ingresar</button>
             </form>
               <p id="message"></p> 
         </div>
@@ -39,5 +39,29 @@
         <i class="fa-brands fa-linkedin" style="color: #e3740d;"></i><a href="https://www.linkedin.com/in/djebbour-kelthoum-438071258/">LinkedIn</a></li>
     </footer>
         <script src="script.js"></script>
+        <script>
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Aquí es donde normalmente harías la validación del usuario y la contraseña
+    // contra una base de datos o algún servicio. Por simplicidad, solo mostraremos un mensaje.
+    if (username === 'kelthoum' && password === '1234') {
+        document.getElementById('message').textContent = 'Inicio de sesión exitoso!';
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').style.background ='white';
+    } else {
+        document.getElementById('message').textContent = 'Nombre de usuario o contraseña incorrectos.';
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').style.background ='white';
+    }
+
+    // Reinicia los campos del formulario después de intentar el inicio de sesión
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+});
+        </script>
     </body>
     </html>

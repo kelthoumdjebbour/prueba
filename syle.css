@@ -70,9 +70,15 @@ a{
         max-width: 600px;
         margin: 2em auto;
         padding: 1em;
-        border: 4px solid #771b04;
+    /*     border: 4px solid #771b04; */
         border-radius: 5px;
     }
+    form:hover {
+        box-shadow: 0 8px 20px rgba(216, 74, 8, 0.932);
+        border: #771b04 2px solid;
+    }
+    
+
     /* estilo para  los contenidos de formulario*/
     form div {
         margin-bottom: 1em;
@@ -90,17 +96,17 @@ a{
     form input[type="checkbox"] {
         width: auto;
     }
-    form button {
-        background-color: #ec850f;
-        color: white;
+    #btn1 {
+       /*  background-color: #67ec0f; */
+        color: red;
         border: none;
         padding: 0.75em 1.5em;
         border-radius: 5px;
         cursor: pointer;
     }
-    form button:hover {
+    /* form button:hover {
         background-color: #e28b39;
-    }
+    } */
 
     /* estilo para login*/
     h1 { text-align: center;}
@@ -108,12 +114,13 @@ a{
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        background-color: rgb(216, 57, 17);
+    /*     background-color: rgb(216, 57, 17); */
         transition: box-shadow 0.3s ease;
     }
     
     .login-container:hover {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 20px rgba(216, 74, 8, 0.932);
+        border: #771b04 2px solid;
     }
     
     .input-group {
@@ -141,19 +148,20 @@ a{
         outline: none;
     }
     
-    button {
+    #Ingresar {
         width: 100%;
         padding: 10px;
-        color: white;
+        color: rgb(12, 12, 12);
         border: none;
         cursor: pointer;
         border-radius: 3px;
-        transition: background-color 0.3s ease;
+      
     }
     
-    button:active {
-        transform: scale(0.98);
+    #Ingresar:hover {
+        background-color: #e23941;
     }
+
     #message {
         text-align: center;
         margin-top: 15px;
@@ -176,4 +184,7 @@ a{
         display: flex;
         justify-content: center;
         
+      }
+      #weekDay{
+        background-color: #ff4800;
       }

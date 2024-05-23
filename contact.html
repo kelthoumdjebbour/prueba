@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pruveva</title>
+    <title>Cake Shop</title>
     <link rel="stylesheet" href="syle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -11,11 +11,33 @@
     
     <header>
         <h2 class="logo">Cake Shop</h2>
+    
+
+
+     <!--  <div id="date-container">
+        <select id="selector">
+            <option value="" selected disabled>Seleccionar idioma</option>
+            <option value="castellano">Castellano</option>
+            <option value="euskera">Euskera</option>
+            <option value="ingles">Inglés</option>
+        </select>
+        <p id="weekDay"></p>
+    </div> -->
+
            <ul>
             <li><a href="home.html" class="active">home</a></li>
             <li><a href="prudact.html">product</a></li>
             <li><a href="contact.html">contact</a></li>
             <li><a href="login.html">login</a></li>
+            <li><div id="date-container">
+                <select id="selector">
+                    <option value="" selected disabled>Seleccionar idioma</option>
+                    <option value="castellano">Castellano</option>
+                    <option value="euskera">Euskera</option>
+                    <option value="ingles">Inglés</option>
+                </select>
+                <p id="weekDay"></p>
+            </div></li>
            </ul>
         
         </header>
@@ -47,7 +69,7 @@
                 <input type="checkbox" id="privacy" name="privacy" required>
                 <label for="privacy">Acepto la <a href="https://www.arrese.biz/politica-de-privacidad/"> política de privacidad</a></label>
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" id="btn1" disabled>Enviar</button>
         </form>
     
 
@@ -57,7 +79,67 @@
             <i class="fa-brands fa-linkedin" style="color: #e3740d;"></i><a href="https://www.linkedin.com/in/djebbour-kelthoum-438071258/">LinkedIn</a></li>
         </footer>
 
+       <script>
+         
+         const acepto =document.getElementById("privacy");
+         const btn1= document.getElementById("btn1");
 
+         acepto.addEventListener("click",function(){
+           let checkeado=acepto.checked
+            if (checkeado) {
+                btn1.disabled=false;
+                btn1.style.color="green";
+                
+                
+            } else { 
+                btn1.disabled=true;
+                btn1.style.color="red";
+                
+                
+            }
+
+         })
+     </script>  
+    
+   <script>
+    const lista = document.getElementById("selector");
+    const resultado = document.getElementById("weekDay");
+
+    lista.addEventListener("change", calcularDiaSemana);
+
+    function calcularDiaSemana() {
+        let now = new Date(); // que representa la fecha y hora actuales
+        let diaSemana = now.getDay();//almacenará valor  que devuelve metodo getDay(día de la semana como un número entero )
+        let dia = now.getDate();//almacenará valor  que devuelve metodo getDate(día del (1-31) )
+        let mes = now.getMonth() + 1; // (Los meses empiezan desde 0 )Obtiene el mes (0 para enero, 1 para febrero, ..., 11 para diciembre) y le suma 1 para convertirlo a una numeración más intuitiva (1 para enero, 2 para febrero, ..., 12 para diciembre)
+        let año = now.getFullYear();//almacenará valor que devuelve metodo getFullYear(año completo )
+
+        const castellano = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+        const euskera = ["Igandea", "Astelehena", "Asteartea", "Asteazkena", "Osteguna", "Ostirala", "Larunbata"];
+        const ingles = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        var idioma = lista.value;
+
+        var mensaje = "";
+
+        switch (idioma) {
+            case "castellano":
+                mensaje = `${castellano[diaSemana]}, ${dia}/${mes}/${año}`;
+                break;
+            case "euskera":
+                mensaje = `${euskera[diaSemana]}, ${dia}/${mes}/${año}`;
+                break;
+            case "ingles":
+                mensaje = `${ingles[diaSemana]}, ${dia}/${mes}/${año}`;
+                break;
+            default:
+                alert("Hay que elegir un valor");
+        }
+
+        resultado.textContent = mensaje;
+    }
+</script>
+        
 
     <script src="script.js"></script>
 </body>
