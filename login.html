@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pruveva</title>
+    <title>Cake Shop</title>
+    <meta name="description" content="Cake Shop es una pastelería artesanal de confianza. Disfruta de nuestros deliciosos pasteles, tartas y postres hechos con los mejores ingredientes.">
     <link rel="stylesheet" href="syle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -16,6 +17,15 @@
             <li><a href="prudact.html">product</a></li>
             <li><a href="contact.html">contact</a></li>
             <li><a href="login.html">login</a></li>
+            <li><div id="date-container">
+                <select id="selector">
+                    <option value="" selected disabled>Select language</option>
+                    <option value="castellano">Castellano</option>
+                    <option value="euskera">Euskera</option>
+                    <option value="ingles">Inglés</option>
+                </select>
+                <p id="weekDay"></p>
+            </div></li>
            </ul>
         
         </header>
@@ -39,29 +49,36 @@
         <i class="fa-brands fa-linkedin" style="color: #e3740d;"></i><a href="https://www.linkedin.com/in/djebbour-kelthoum-438071258/">LinkedIn</a></li>
     </footer>
         <script src="script.js"></script>
-        <script>
-            document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    // Aquí es donde normalmente harías la validación del usuario y la contraseña
-    // contra una base de datos o algún servicio. Por simplicidad, solo mostraremos un mensaje.
-    if (username === 'kelthoum' && password === '1234') {
-        document.getElementById('message').textContent = 'Inicio de sesión exitoso!';
-        document.getElementById('message').style.color = 'green';
-        document.getElementById('message').style.background ='white';
-    } else {
-        document.getElementById('message').textContent = 'Nombre de usuario o contraseña incorrectos.';
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').style.background ='white';
-    }
-
-    // Reinicia los campos del formulario después de intentar el inicio de sesión
-    document.getElementById('username').value = '';
-    document.getElementById('password').value = '';
-});
-        </script>
+        <!-- script para login de acceso -->
+         <script>
+            const botonLogin = document.getElementById('Ingresar');
+            const inputUsername = document.getElementById('username');
+            const inputPassword = document.getElementById('password');
+            const message = document.getElementById('message');
+        
+            // PRIMERA PARTE - Validación de inicio de sesión
+            botonLogin.addEventListener("click", logueo);
+        
+            function logueo(event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+        
+                let user = inputUsername.value;
+                let clave = inputPassword.value;
+        
+                if (user === "kelthoum" && clave === "1234") {
+                    message.textContent = 'Inicio de sesión exitoso!';
+                    message.style.color = 'green';
+                    message.style.background = 'white';
+                } else {
+                    message.textContent = 'Nombre de usuario o contraseña incorrectos.';
+                    message.style.color = 'red';
+                    message.style.background = 'white';
+                }
+        
+                // Reinicia los campos del formulario después de intentar el inicio de sesión
+                inputUsername.value = '';
+                inputPassword.value = '';
+            };
+        </script> 
     </body>
     </html>

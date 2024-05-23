@@ -186,5 +186,26 @@ a{
         
       }
       #weekDay{
+        border-radius: 10px;
         background-color: #ff4800;
+      }
+      #selector{ border-radius: 10px;}
+      .product_imagen{
+        width: 20rem;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .product_imagen:hover {
+        box-shadow: 0 8px 20px rgba(216, 74, 8, 0.932);
+        border: #771b04 2px solid;}
+      
+      #imagen{
+        width: 20rem;
+        height: 20rem;
+      }
+       h3{
+        color: #771b04;
+        text-decoration-line: underline;
       }
